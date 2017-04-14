@@ -1,0 +1,401 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{662C4633-A8FC-4D9A-85ED-8FDB9622229E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OpenNETCF.Web</RootNamespace>
+    <AssemblyName>OpenNETCF.Web</AssemblyName>
+    <ProjectTypeGuids>{4D628B5B-2FBC-4AA6-8C16-197242AEB884};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PlatformFamilyName>WindowsCE</PlatformFamilyName>
+    <PlatformID>E2BECB1F-8C8C-41ba-B736-9BE7D946A398</PlatformID>
+    <OSVersion>5.0</OSVersion>
+    <DeployDirSuffix>USB Storage\SampleSite</DeployDirSuffix>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FormFactorID>
+    </FormFactorID>
+    <DeployDirPrefix>\</DeployDirPrefix>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\Padarn.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <NativePlatformName>Windows CE</NativePlatformName>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants Condition="'$(SKU)' != 'EVAL'">TRACE;DEBUG;$(PlatformFamilyName)</DefineConstants>
+    <DefineConstants Condition="'$(SKU)' == 'EVAL'">TRACE;DEBUG;$(PlatformFamilyName);EVAL</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <DocumentationFile>bin\Debug\OpenNETCF.Web.xml</DocumentationFile>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Deploy\bin\Release\Unobfuscated\</OutputPath>
+    <DefineConstants Condition="'$(SKU)' != 'EVAL'">TRACE;$(PlatformFamilyName)</DefineConstants>
+    <DefineConstants Condition="'$(SKU)' == 'EVAL'">TRACE;$(PlatformFamilyName);EVAL</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <DocumentationFile>OpenNETCF.Web.XML</DocumentationFile>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Evaluation|AnyCPU' ">
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <OutputPath>..\..\Deploy\bin\Evaluation\Unobfuscated\</OutputPath>
+    <DefineConstants>TRACE;WindowsCE; EVAL</DefineConstants>
+    <Optimize>true</Optimize>
+    <FileAlignment>512</FileAlignment>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <DocumentationFile>..\..\Deploy\bin\Evaluation\Unobfuscated\OpenNETCF.Web.XML</DocumentationFile>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Academic|AnyCPU' ">
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <GenerateSerializationAssemblies>off</GenerateSerializationAssemblies>
+    <OutputPath>..\..\Deploy\bin\Academic\Unobfuscated\</OutputPath>
+    <DefineConstants>WindowsCE; ACADEMIC</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Timebomb|AnyCPU' ">
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <OutputPath>..\..\Deploy\bin\Timebomb\Unobfuscated\</OutputPath>
+    <DefineConstants>TRACE;WindowsCE TIMEBOMB</DefineConstants>
+    <DocumentationFile>OpenNETCF.Web.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'MAC Licensed|AnyCPU' ">
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <OutputPath>..\..\Deploy\bin\MACLicensed\Unobfuscated\</OutputPath>
+    <DefineConstants>TRACE;WindowsCE MAC_LICENSED</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>OpenNETCF.Web.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="SecureBlackbox, Version=14.0.287.0, Culture=neutral, PublicKeyToken=374a3a73ff9ebc6a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\EldoS\SecureBlackbox.NET\Assemblies\NET_CF20\SecureBlackbox.dll</HintPath>
+    </Reference>
+    <Reference Include="SecureBlackbox.SSLCommon, Version=14.0.287.0, Culture=neutral, PublicKeyToken=374a3a73ff9ebc6a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\EldoS\SecureBlackbox.NET\Assemblies\NET_CF20\SecureBlackbox.SSLCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="SecureBlackbox.SSLServer, Version=14.0.287.0, Culture=neutral, PublicKeyToken=374a3a73ff9ebc6a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\EldoS\SecureBlackbox.NET\Assemblies\NET_CF20\SecureBlackbox.SSLServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CodeBehindAssembly.cs" />
+    <Compile Include="Configuration\AuthenticationConfiguration.cs" />
+    <Compile Include="Configuration\CacheLocation.cs" />
+    <Compile Include="Configuration\CachingConfig.cs" />
+    <Compile Include="Configuration\CachingProfile.cs" />
+    <Compile Include="Configuration\CookiesConfiguration.cs" />
+    <None Include="Configuration\HandlerBase.cs" />
+    <Compile Include="Configuration\HttpHandlersConfig.cs" />
+    <Compile Include="Configuration\HttpRuntimeConfig.cs" />
+    <Compile Include="Configuration\RestConfig.cs" />
+    <Compile Include="Configuration\Role.cs" />
+    <Compile Include="Configuration\RoleCollection.cs" />
+    <Compile Include="Configuration\SecurityConfig.cs" />
+    <Compile Include="Configuration\SessionConfiguration.cs" />
+    <Compile Include="Configuration\User.cs" />
+    <Compile Include="Configuration\UserCollection.cs" />
+    <Compile Include="Configuration\VirtualDirectoryConfig.cs" />
+    <Compile Include="Configuration\VirtualPathProviders.cs" />
+    <Compile Include="Core\ExtensionAttribute.cs" />
+    <Compile Include="Core\Extensions.cs" />
+    <Compile Include="DefaultHttpHandler.cs" />
+    <Compile Include="Delegates.cs" />
+    <Compile Include="Exceptions\ConfigurationErrorsException.cs" />
+    <Compile Include="Exceptions\HttpRequestValidationException.cs" />
+    <Compile Include="Helpers\CaseInsensitiveDictionary.cs" />
+    <Compile Include="Helpers\CrossSiteScriptingValidation.cs" />
+    <Compile Include="Helpers\Device.cs" />
+    <Compile Include="Helpers\StringHelpers.cs" />
+    <Compile Include="Helpers\UrlPath.cs" />
+    <Compile Include="Hosting\AsyncWorkerRequest.cs" />
+    <Compile Include="Hosting\HostingEnvironment.cs" />
+    <Compile Include="Hosting\VirtualDirectory.cs" />
+    <Compile Include="Hosting\VirtualFile.cs" />
+    <Compile Include="Hosting\VirtualFileBase.cs" />
+    <Compile Include="Hosting\VirtualPathProvider.cs" />
+    <Compile Include="HttpApplicationFactory.cs" />
+    <Compile Include="HttpBrowserCapabilities.cs" />
+    <Compile Include="HttpCacheability.cs" />
+    <Compile Include="HttpCachePolicy.cs" />
+    <Compile Include="HttpCachePolicyBase.cs" />
+    <Compile Include="HttpCapabilitiesBase.cs" />
+    <Compile Include="HttpContext.cs" />
+    <Compile Include="HttpContextBase.cs" />
+    <Compile Include="HttpContextWrapper.cs" />
+    <Compile Include="HttpCookie.cs" />
+    <Compile Include="HttpCookieCollection.cs" />
+    <Compile Include="HttpCookieMode.cs" />
+    <Compile Include="HttpErrorCode.cs" />
+    <Compile Include="HttpException.cs" />
+    <Compile Include="HttpFileCollection.cs" />
+    <Compile Include="HttpInputStream.cs" />
+    <Compile Include="HttpRequestBase.cs" />
+    <Compile Include="HttpRequestWrapper.cs" />
+    <Compile Include="HttpResponseBase.cs" />
+    <Compile Include="HttpResponseWrapper.cs" />
+    <Compile Include="HttpValidationStatus.cs" />
+    <Compile Include="IHttpModule.cs" />
+    <Compile Include="Licensing\LicenseProvider.cs" />
+    <Compile Include="Logging\DefaultLogProvider.cs" />
+    <Compile Include="Logging\ILogProvider.cs" />
+    <Compile Include="Logging\LogDataItem.cs" />
+    <Compile Include="MultipartFormParser.cs" />
+    <Compile Include="HttpPostedFile.cs" />
+    <Compile Include="HttpRawRequestContent.cs" />
+    <Compile Include="HttpRequest.cs" />
+    <Compile Include="Exceptions\HttpUnhandledException.cs" />
+    <Compile Include="HttpUtility.cs" />
+    <Compile Include="HttpValueCollection.cs" />
+    <Compile Include="HttpMethod.cs" />
+    <Compile Include="MultipartContentItem.cs" />
+    <Compile Include="Networking\INetworkInterface.cs" />
+    <Compile Include="Networking\IP_ADAPTER_INFO.cs" />
+    <Compile Include="Networking\NativeMethods.cs" />
+    <Compile Include="Networking\NetworkInterface.cs" />
+    <Compile Include="Networking\NetworkInterface_static.cs" />
+    <Compile Include="Networking\PhysicalAddress.cs" />
+    <Compile Include="OpenNETCF.Configuration\AppSettingsReader.cs" />
+    <Compile Include="OpenNETCF.Configuration\Assembly2.cs" />
+    <Compile Include="OpenNETCF.Configuration\ConfigurationException.cs" />
+    <Compile Include="OpenNETCF.Configuration\ConfigurationRecord.cs" />
+    <Compile Include="OpenNETCF.Configuration\ConfigurationSettings.cs" />
+    <Compile Include="OpenNETCF.Configuration\ConfigXmlAttribute.cs" />
+    <Compile Include="OpenNETCF.Configuration\ConfigXmlCDataSection.cs" />
+    <Compile Include="OpenNETCF.Configuration\ConfigXmlComment.cs" />
+    <Compile Include="OpenNETCF.Configuration\ConfigXmlDocument.cs" />
+    <Compile Include="OpenNETCF.Configuration\ConfigXmlElement.cs" />
+    <Compile Include="OpenNETCF.Configuration\ConfigXmlSignificantWhitespace.cs" />
+    <Compile Include="OpenNETCF.Configuration\ConfigXmlText.cs" />
+    <Compile Include="OpenNETCF.Configuration\ConfigXmlWhitespace.cs" />
+    <Compile Include="OpenNETCF.Configuration\DefaultConfigurationSystem.cs" />
+    <Compile Include="OpenNETCF.Configuration\DictionarySectionHandler.cs" />
+    <Compile Include="OpenNETCF.Configuration\HandlerBase.cs" />
+    <Compile Include="OpenNETCF.Configuration\IConfigurationSectionHandler.cs" />
+    <Compile Include="OpenNETCF.Configuration\IConfigurationSystem.cs" />
+    <Compile Include="OpenNETCF.Configuration\IConfigXmlNode.cs" />
+    <Compile Include="OpenNETCF.Configuration\IgnoreSectionHandler.cs" />
+    <Compile Include="OpenNETCF.Configuration\NameValueFileSectionHandler.cs" />
+    <Compile Include="OpenNETCF.Configuration\NameValueSectionHandler.cs" />
+    <Compile Include="OpenNETCF.Configuration\ReadOnlyNameValueCollection.cs" />
+    <Compile Include="OpenNETCF.Configuration\SingleTagSectionHandler.cs" />
+    <Compile Include="Parsers\AspxParser.cs" />
+    <Compile Include="Parsers\JSON.cs" />
+    <Compile Include="Properties\PadarnVersionInfo.cs" />
+    <Compile Include="Routing\IRouteHandler.cs" />
+    <Compile Include="Routing\RequestContext.cs" />
+    <Compile Include="Routing\Route.cs" />
+    <Compile Include="Routing\RouteBase.cs" />
+    <Compile Include="Routing\RouteCollection.cs" />
+    <Compile Include="Routing\RouteData.cs" />
+    <Compile Include="Routing\RouteTable.cs" />
+    <Compile Include="Routing\RouteValueDictionary.cs" />
+    <Compile Include="Routing\VirtualPathData.cs" />
+    <Compile Include="Security\Authentication.cs" />
+    <Compile Include="Security\BasicAuthentication.cs" />
+    <Compile Include="Security\Cryptography\BasicAuthInfo.cs" />
+    <Compile Include="Security\Cryptography\DigestAuthInfo.cs" />
+    <Compile Include="Security\Cryptography\IAuthenticationCallbackInfo.cs" />
+    <Compile Include="Security\DigestAuthentication.cs" />
+    <Compile Include="Security\FormsAuthentication.cs" />
+    <Compile Include="Security\GenericIdentity.cs" />
+    <Compile Include="Security\GenericPrincipal.cs" />
+    <Compile Include="Security\IIdentity.cs" />
+    <Compile Include="Security\IPrincipal.cs" />
+    <Compile Include="Server\HttpRequestListener.cs" />
+    <Compile Include="HttpResponse.cs" />
+    <Compile Include="HttpRuntime.cs" />
+    <Compile Include="HttpWorkerRequest.cs" />
+    <Compile Include="IHttpHandler.cs" />
+    <Compile Include="MimeMapping.cs" />
+    <Compile Include="Server\HttpSocket.cs" />
+    <Compile Include="Server\NetworkStreamWrapperBase.cs" />
+    <Compile Include="Server\RequestEventArgs.cs" />
+    <Compile Include="Server\SocketWrapperBase.cs" />
+    <Compile Include="Server\Ssl\HttpsSocket.cs" />
+    <Compile Include="Server\Ssl\SslAsyncResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Server\Ssl\SslNetworkStream.cs" />
+    <Compile Include="Server\Ssl\ElServerSSLSocket.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Server\Ssl\ElSSLSocket.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Server\Ssl\SslStream.cs" />
+    <Compile Include="Server\StandardNetworkStream.cs" />
+    <Compile Include="Server\WebServer.cs" />
+    <Compile Include="SessionState\HttpSessionState.cs" />
+    <Compile Include="SessionState\ISessionIDManager.cs" />
+    <Compile Include="SessionState\ISessionStateItemCollection.cs" />
+    <Compile Include="SessionState\SessionIDManager.cs" />
+    <Compile Include="SessionState\SessionManager.cs" />
+    <Compile Include="SessionState\SessionStateItemCollection.cs" />
+    <Compile Include="SessionState\SessionStateMode.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BaseParser.cs" />
+    <Compile Include="UI\Control.cs" />
+    <Compile Include="UI\ControlBuilders\BasicControlBuilder.cs" />
+    <Compile Include="UI\ControlBuilders\ButtonControlBuilder.cs" />
+    <Compile Include="UI\ControlBuilders\ControlBuilder.cs" />
+    <Compile Include="UI\ControlCollection.cs" />
+    <Compile Include="UI\DefaultPageParserFilter.cs" />
+    <Compile Include="UI\HtmlTextWriter.cs" />
+    <Compile Include="UI\HtmlTextWriterAttribute.cs" />
+    <Compile Include="UI\HtmlTextWriterTag.cs" />
+    <Compile Include="UI\IPostBackEventHandler.cs" />
+    <Compile Include="UI\ITextControl.cs" />
+    <Compile Include="UI\Page.cs" />
+    <Compile Include="PageHandler.cs" />
+    <Compile Include="Configuration\ServerConfigurationHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Hosting\DefaultWorkerRequest.cs" />
+    <Compile Include="Configuration\ServerConfig.cs" />
+    <Compile Include="StaticFileHandler.cs" />
+    <Compile Include="Parsers\PageParser.cs" />
+    <Compile Include="UI\PageParserFilter.cs" />
+    <Compile Include="UI\TemplateControl.cs" />
+    <Compile Include="UI\TemplateParser.cs" />
+    <Compile Include="UI\UserControl.cs" />
+    <Compile Include="UI\WebControls\Button.cs" />
+    <Compile Include="UI\WebControls\Label.cs" />
+    <Compile Include="UI\WebControls\LinkButton.cs" />
+    <Compile Include="UI\WebControls\TextBox.cs" />
+    <Compile Include="UI\WebControls\TextBoxMode.cs" />
+    <Compile Include="UI\WebControls\WebControl.cs" />
+    <Compile Include="VirtualPath.cs" />
+    <Compile Include="VirtualPathUtility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx">
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\ChangeLog.txt" />
+  </ItemGroup>
+  <Import Condition="'$(TargetFrameworkVersion)' == 'v1.0'" Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.v1.targets" />
+  <Import Condition="'$(TargetFrameworkVersion)' == 'v2.0'" Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}">
+        <HostingProcess disable="1" />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  -->
+  <!--
+  <UsingTask TaskName="MacroSubstitution" AssemblyFile="$(SolutionDir)..\secondparty\OpenNETCF.Build.Utilities\OpenNETCF.Build.Utilities.dll" />
+  <UsingTask TaskName="CabWiz" AssemblyFile="$(SolutionDir)..\secondparty\OpenNETCF.Build.Utilities\OpenNETCF.Build.Utilities.dll" />
+  <UsingTask TaskName="AppRunner" AssemblyFile="$(SolutionDir)..\secondparty\OpenNETCF.Build.Utilities\OpenNETCF.Build.Utilities.dll" />
+
+  <Target Name="AfterBuild">
+    <CallTarget Targets="ObfuscateLibrary" />
+  </Target>
+
+  <Target Name="ObfuscateLibrary">
+    <Copy
+      SourceFiles="$(OutputPath)..\..\Padarn.postbuild"
+      DestinationFiles="$(OutputPath)..\..\Padarn.Installer.postbuild"
+    />
+
+    <MacroSubstitution
+      TargetFile="$(OutputPath)..\..\Padarn.Installer.postbuild"
+      SearchToken="{PostbuildSourceFile}"
+      ReplaceToken="$(OutputPath)\OpenNETCF.Web.dll"
+    />
+
+    <MacroSubstitution
+      TargetFile="$(OutputPath)..\..\Padarn.Installer.postbuild"
+      SearchToken="{PostbuildOutputDir}"
+      ReplaceToken="$(OutputPath)..\obfuscated"
+    />
+
+    <AppRunner WorkingDirectory="$(SolutionDir)..\thirdparty\xenocode\PostBuild\" FileName="xbuild.exe" Arguments ="..\..\..\Padarn\Deploy\bin\Padarn.Installer.postbuild" />
+
+    <Copy
+      SourceFiles="@(CopyReleaseFile)"
+      DestinationFolder="$(OutputPath)..\obfuscated"
+    />
+  </Target>
+  <ItemGroup>
+    <CopyReleaseFile Include="$(OutputPath)OpenNETCF.Ssl.dll" />
+    <CopyReleaseFile Include="$(OutputPath)OpenNETCF.Configuration.dll" />
+    <CopyReleaseFile Include="$(OutputPath)OpenNETCF.Web.xml" />
+  </ItemGroup>
+  -->
+  <Import Condition="'$(TargetFrameworkVersion)' == 'v3.5'" Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

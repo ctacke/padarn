@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BinFolderName" xml:space="preserve">
+    <value>bin</value>
+    <comment>Do not localize</comment>
+  </data>
+  <data name="CannotRedirectToNewLine" xml:space="preserve">
+    <value>Cannot redirect to new line</value>
+  </data>
+  <data name="Dangerous_input_detected" xml:space="preserve">
+    <value>A potentially dangerous {0} value was detected from the client ({1}).</value>
+  </data>
+  <data name="ErrorPage" xml:space="preserve">
+    <value>&lt;html style="background-color: #f0f0f0; font-family: Helvetica;  color: #000; font-size: 11pt;"&gt;
+	&lt;head&gt;
+		&lt;title&gt;Server Error: Unhandled exception in '{0}'&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;center&gt;
+		&lt;div style="text-align: left; margin-top: 50px; margin-bottom: 0px; border: 1px solid #e3e3e3; width: 600px; background: #fff; margin-left: auto; margin-right: auto; 
+		padding-left: 10px; padding-right: 40px; padding-top: 40px; padding-bottom: 20px;"&gt;		
+			&lt;div style="float: left; margin-left: 40px; width: 540px;"&gt;
+				&lt;div style="font-size: 14pt; font-weight: bold; padding-bottom: 5px; border-bottom: 1px solid #e3e3e3;"&gt;
+					Server Error: Unhandled exception. 
+				&lt;/div&gt;
+				&lt;p style="padding-bottom: 5px; border-bottom: 1px solid #e3e3e3;"&gt;{1}&lt;/p&gt;
+				&lt;p&gt;&lt;b&gt;Exception:&lt;/b&gt;&lt;br/&gt;&lt;span style="font-family: Courier New; font-size: 9pt;"&gt;{2}&lt;/span&gt;&lt;/p&gt;
+				&lt;p&gt;
+					&lt;b&gt;Stack Trace:&lt;/b&gt;&lt;br/&gt;
+					&lt;span style="font-family: Courier New; font-size: 9pt;"&gt;
+						{3}
+					&lt;/span&gt;
+				&lt;/p&gt;
+			&lt;/div&gt;
+			&lt;div style="clear: both;"/&gt;
+		&lt;/div&gt;
+		&lt;/center&gt;
+	&lt;/body&gt;
+&lt;html&gt;</value>
+    <comment>Do not localize</comment>
+  </data>
+  <data name="HeaderAcceptRanges" xml:space="preserve">
+    <value>Accept-Ranges</value>
+    <comment>Do not localize</comment>
+  </data>
+  <data name="HeaderAcceptRangesBytes" xml:space="preserve">
+    <value>bytes</value>
+    <comment>Do not localize</comment>
+  </data>
+  <data name="HeaderContentLength" xml:space="preserve">
+    <value>Content-Length</value>
+    <comment>Do not localize</comment>
+  </data>
+  <data name="HeaderContentType" xml:space="preserve">
+    <value>Content-Type</value>
+    <comment>Do not localize</comment>
+  </data>
+  <data name="HeaderFormat" xml:space="preserve">
+    <value>{0}: {1}\r\n</value>
+    <comment>Do not localize</comment>
+  </data>
+  <data name="HeaderLocation" xml:space="preserve">
+    <value>Location</value>
+    <comment>Do not localize</comment>
+  </data>
+  <data name="HttpAccessDenied" xml:space="preserve">
+    <value>Access is denied.</value>
+  </data>
+  <data name="HttpAccessForbidden" xml:space="preserve">
+    <value>Access is forbidden.</value>
+  </data>
+  <data name="HttpContinue" xml:space="preserve">
+    <value>HTTP/1.1 100 Continue\r\n</value>
+  </data>
+  <data name="HttpEnumeratorDenied" xml:space="preserve">
+    <value>The file enumerator has been denied access.</value>
+  </data>
+  <data name="HttpEnumeratorError" xml:space="preserve">
+    <value>An error occurred attempting to enumerate the files.</value>
+  </data>
+  <data name="HttpErrorParsingHeader" xml:space="preserve">
+    <value>Error parsing request headers</value>
+  </data>
+  <data name="HttpFileHidden" xml:space="preserve">
+    <value>The file you are trying to access is hidden.</value>
+  </data>
+  <data name="HttpFileNotFound" xml:space="preserve">
+    <value>The file you are trying to access cannot be found.</value>
+  </data>
+  <data name="HttpOK" xml:space="preserve">
+    <value>HTTP/1.1 200 OK\r\n</value>
+    <comment>Do not localize</comment>
+  </data>
+  <data name="Invalid_string_from_browser_caps" xml:space="preserve">
+    <value>The HttpBrowserCapabilities string '{1}' evaluated to '{2}'.  {0}  Check the browserCaps section of machine.config or web.config to correct the error.</value>
+    <comment>HttpCapabilitiesBase (Line 731)</comment>
+  </data>
+  <data name="Invalid_urlencoded_form_data" xml:space="preserve">
+    <value>The URL-encoded form data is not valid.</value>
+  </data>
+  <data name="InvalidHeaderEncoding" xml:space="preserve">
+    <value>Invalid header encoding {0}.</value>
+  </data>
+  <data name="Max_request_length_exceeded" xml:space="preserve">
+    <value>Maximum request length exceeded</value>
+  </data>
+  <data name="NoHttpHandler" xml:space="preserve">
+    <value>No HTTP handler for this file type</value>
+  </data>
+  <data name="PageLoadEventName" xml:space="preserve">
+    <value>Page_Load</value>
+    <comment>Do not localize</comment>
+  </data>
+  <data name="UnsupportedMethod" xml:space="preserve">
+    <value>Unsupported method in query: {0}</value>
+  </data>
+  <data name="VirtualDir_AttributeNotFound" xml:space="preserve">
+    <value>{0} attribute not found in the VirtualDirectory node in {1}.</value>
+  </data>
+  <data name="CodeBehindNotFoundDesc" xml:space="preserve">
+    <value>Although the page seems to be valid, the server was unable to find its associated code-behind assembly.
+					&lt;ul style="list-style: square;"&gt;
+						&lt;li style="padding-bottom: 5px;"&gt;Check that the file mentioned in the exception exists on the device.&lt;/li&gt;
+						&lt;li style="padding-bottom: 5px; line-height: 1.4;"&gt;Is the name of the assembly the same as the name specified in the ASP.NET page? They must be the same.&lt;/li&gt;
+					&lt;/ul&gt;</value>
+  </data>
+  <data name="CodeBehindNotFoundTitle" xml:space="preserve">
+    <value>Code-behind assembly, or one of its references, could not be found.</value>
+  </data>
+  <data name="ContextualErrorTemplate" xml:space="preserve">
+    <value>&lt;html style="background-color: #f0f0f0; font-family: Helvetica;  color: #000; font-size: 10.5pt; line-height: 1.4;"&gt;
+	&lt;head&gt;
+		&lt;title&gt;Server Error: {0}&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;center&gt;
+		&lt;div style="text-align: left; margin-top: 50px; margin-bottom: 0px; border: 1px solid #e3e3e3; width: 600px; background: #fff; margin-left: auto; margin-right: auto; 
+		padding-left: 10px; padding-right: 40px; padding-top: 30px; padding-bottom: 20px;"&gt;		
+			&lt;div style="float: left; margin-left: 40px; width: 540px;"&gt;
+				&lt;div style="font-size: 14pt; font-weight: bold; padding-bottom: 10px; border-bottom: 1px solid #e3e3e3;"&gt;
+					Server Error: {0}
+				&lt;/div&gt;
+				&lt;p style="padding-bottom: 15px; border-bottom: 1px solid #e3e3e3;"&gt;&lt;b&gt;Exception:&lt;/b&gt; {1}&lt;/p&gt;
+				&lt;p&gt;
+					{2}
+				&lt;/p&gt;
+			&lt;/div&gt;
+			&lt;div style="clear: both;"/&gt;
+		&lt;/div&gt;
+		&lt;/center&gt;
+	&lt;/body&gt;
+&lt;html&gt;\r\n</value>
+  </data>
+  <data name="FileNotFoundErrorPage" xml:space="preserve">
+    <value>&lt;html style="background-color: #f0f0f0; font-family: Helvetica;  color: #000; font-size: 10.5pt; line-height: 1.4;"&gt;
+	&lt;head&gt;
+		&lt;title&gt;Server Error: Code-behind assembly not found.&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;center&gt;
+		&lt;div style="text-align: left; margin-top: 50px; margin-bottom: 0px; border: 1px solid #e3e3e3; width: 600px; background: #fff; margin-left: auto; margin-right: auto; 
+		padding-left: 10px; padding-right: 40px; padding-top: 30px; padding-bottom: 20px;"&gt;		
+			&lt;div style="float: left; margin-left: 40px; width: 540px;"&gt;
+				&lt;div style="font-size: 14pt; font-weight: bold; padding-bottom: 10px; border-bottom: 1px solid #e3e3e3;"&gt;
+					Server Error: Code-behind assembly cannot be found. 
+				&lt;/div&gt;
+				&lt;p style="padding-bottom: 15px; border-bottom: 1px solid #e3e3e3;"&gt;&lt;b&gt;Exception:&lt;/b&gt; {0}&lt;/p&gt;
+				&lt;p&gt;
+					Although the page seems to be valid, the server was unable to find its associated code-behind assembly.
+					&lt;ul style="list-style: square;"&gt;
+						&lt;li style="padding-bottom: 5px;"&gt;Check that the file mentioned in the exception exists on the device.&lt;/li&gt;
+						&lt;li style="padding-bottom: 5px; line-height: 1.4;"&gt;Is the name of the assembly the same as the name specified in the ASP.NET page? They must be the same.&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/p&gt;
+			&lt;/div&gt;
+			&lt;div style="clear: both;"/&gt;
+		&lt;/div&gt;
+		&lt;/center&gt;
+	&lt;/body&gt;
+&lt;html&gt;\r\n</value>
+  </data>
+  <data name="TypeLoadDesc" xml:space="preserve">
+    <value>The code-behind class for this page is either missing from the assembly or is invalid.
+					&lt;ul style="list-style: square;"&gt;
+						&lt;li style="padding-bottom: 5px;"&gt;Check that the code-behind class derives from &lt;b&gt;OpenNETCF.Web.UI.Page&lt;/b&gt;.&lt;/li&gt;
+						&lt;li style="padding-bottom: 5px;"&gt;Is the name of the code-behind class the same as the name specified in the ASP.NET page? They must be the same.&lt;/li&gt;
+						
+						&lt;li style="padding-bottom: 5px;"&gt;Check the scope of the code-behind class and make sure it is public.&lt;/li&gt;
+					&lt;/ul&gt;</value>
+  </data>
+  <data name="TypeLoadTitle" xml:space="preserve">
+    <value>Missing or invalid page class</value>
+  </data>
+  <data name="FileNotFoundDesc" xml:space="preserve">
+    <value>The page or file is missing and cannot be served.
+					&lt;ul style="list-style: square;"&gt;
+						&lt;li style="padding-bottom: 5px;"&gt;Check that the file mentioned in the exception exists on the device.&lt;/li&gt;
+							&lt;li style="padding-bottom: 5px;"&gt;Check that the URL for the file is correct.&lt;/li&gt;
+					&lt;/ul&gt;</value>
+  </data>
+  <data name="FileNotFoundTitle" xml:space="preserve">
+    <value>The page or file cannot be found.</value>
+  </data>
+  <data name="UnhandledExceptionDesc" xml:space="preserve">
+    <value>There was an unhandled exception in '{0}'. Please review the exception and stack trace below. </value>
+  </data>
+  <data name="HttpStatusFileNotFound" xml:space="preserve">
+    <value>HTTP/1.1 404 Not Found\r\n</value>
+  </data>
+  <data name="HttpStatusInternalServerError" xml:space="preserve">
+    <value>HTTP/1.1 500 Internal Server Error\r\n</value>
+  </data>
+  <data name="MaxRequestLengthErrorDesc" xml:space="preserve">
+    <value>The file being uploaded exceeds the maximum length allowed by the server configuration.</value>
+  </data>
+  <data name="MaxRequestLengthErrorTitle" xml:space="preserve">
+    <value>Upload exceeds server setting</value>
+  </data>
+  <data name="DiskError" xml:space="preserve">
+    <value>Disk Error</value>
+  </data>
+  <data name="DiskErrorDesc" xml:space="preserve">
+    <value>A Disk/Drive Error has been occurred.  Check to ensure the Padarn Server is not out of disk space for temporary and log files.</value>
+  </data>
+  <data name="DiskErrorTitle" xml:space="preserve">
+    <value>A Disk/Drive Error has occurred</value>
+  </data>
+  <data name="OutOfDiskSpaceError" xml:space="preserve">
+    <value>Out of disk space</value>
+  </data>
+  <data name="OutOfMemoryErrorDesc" xml:space="preserve">
+    <value>The HTTP request has resulted in an out of memory exception. Please ensure the requestLengthDiskThreshold configuration setting does not exceed the amount of available memory.</value>
+  </data>
+  <data name="OutOfMemoryErrorTitle" xml:space="preserve">
+    <value>The server has no available memory</value>
+  </data>
+  <data name="OutOfMemoryException" xml:space="preserve">
+    <value>Out of memory</value>
+  </data>
+  <data name="HttpStatusBadRequest" xml:space="preserve">
+    <value>HTTP/1.1 400 Bad Request\r\n</value>
+  </data>
+  <data name="HttpStatusConflict" xml:space="preserve">
+    <value>HTTP/1.1 409 Conflict\r\n</value>
+  </data>
+  <data name="HttpStatusExpectationFailed" xml:space="preserve">
+    <value>HTTP/1.1 417 ExpectationFailed\r\n</value>
+  </data>
+  <data name="HttpStatusForbidden" xml:space="preserve">
+    <value>HTTP/1.1 403 Forbidden\r\n</value>
+  </data>
+  <data name="HttpStatusGeneric" xml:space="preserve">
+    <value>HTTP/1.1 {0} Http Status\r\n</value>
+  </data>
+  <data name="HttpStatusGone" xml:space="preserve">
+    <value>HTTP/1.1 410 Gone\r\n</value>
+  </data>
+  <data name="HttpStatusLengthRequired" xml:space="preserve">
+    <value>HTTP/1.1 411 Length Required\r\n</value>
+  </data>
+  <data name="HttpStatusNotAcceptable" xml:space="preserve">
+    <value>HTTP/1.1 406 Not Acceptable\r\n</value>
+  </data>
+  <data name="HttpStatusNotAllowed" xml:space="preserve">
+    <value>HTTP/1.1 405 Method Not Allowed\r\n</value>
+  </data>
+  <data name="HttpStatusPaymentRequired" xml:space="preserve">
+    <value>HTTP/1.1 402 Payment Required\r\n</value>
+  </data>
+  <data name="HttpStatusPreconditionFailed" xml:space="preserve">
+    <value>HTTP/1.1 412 Precondition Failed\r\n</value>
+  </data>
+  <data name="HttpStatusProxyAuthRequired" xml:space="preserve">
+    <value>HTTP/1.1 407 Proxy Authentication Required\r\n</value>
+  </data>
+  <data name="HttpStatusRequestedRangeNotSatisfiable" xml:space="preserve">
+    <value>HTTP/1.1 416 Requested Range Not Satisfiable\r\n</value>
+  </data>
+  <data name="HttpStatusRequestEntityTooLarge" xml:space="preserve">
+    <value>HTTP/1.1 413 Request Entity Too Large\r\n</value>
+  </data>
+  <data name="HttpStatusRequestTimeout" xml:space="preserve">
+    <value>HTTP/1.1 408 RequestTimeout\r\n</value>
+  </data>
+  <data name="HttpStatusRequestURITooLong" xml:space="preserve">
+    <value>HTTP/1.1 414 Request URI Too Long\r\n</value>
+  </data>
+  <data name="HttpStatusUnauthorized" xml:space="preserve">
+    <value>HTTP/1.1 401 Unauthorized\r\n</value>
+  </data>
+  <data name="HttpStatusUnsupportedMediaType" xml:space="preserve">
+    <value>HTTP/1.1 415 Unsupported Media Type\r\n</value>
+  </data>
+  <data name="UnauthorizedDesc" xml:space="preserve">
+    <value>You do not have permission to view this directory or page using the credentials you supplied.</value>
+  </data>
+  <data name="UnauthorizedTitle" xml:space="preserve">
+    <value>Logon failed due to server configuration</value>
+  </data>
+  <data name="UnuthorizedMessage" xml:space="preserve">
+    <value>You are not authorized to view this page</value>
+  </data>
+  <data name="machine_config" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;configuration&gt;
+    &lt;configSections&gt;
+        &lt;section name="appSettings" type="OpenNETCF.Configuration.NameValueFileSectionHandler, OpenNETCF.Configuration" allowLocation="false" /&gt;
+        &lt;section name="opennetcf.diagnostics" type="OpenNETCF.Diagnostics.DiagnosticsConfigurationHandler, OpenNETCF"/&gt;
+    &lt;/configSections&gt;
+&lt;/configuration&gt;</value>
+  </data>
+</root>

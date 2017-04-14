@@ -1,0 +1,1 @@
+<%@ Page CodeBehind="CodeBehind.dll" Inherits="OpenNETCF.Padarn.Default" %>

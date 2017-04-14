@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A71ADD39-CC93-4D74-83E4-F8B26FA0EC10}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OpenNETCF.Web</RootNamespace>
+    <AssemblyName>OpenNETCF.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\PadarnDesktop.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\Publish\SolutionEngine\Debug\Mono</OutputPath>
+    <DefineConstants>TRACE;DEBUG;MAC_LICENSED;MONO</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Deploy\bin\Desktop\Release\unobfuscated\</OutputPath>
+    <DefineConstants>TRACE;MONO</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\Deploy\bin\Desktop\Release\unobfuscated\OpenNETCF.Web.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'MAC Licensed|AnyCPU'">
+    <OutputPath>..\..\Deploy\bin\Desktop\MACLicensed\unobfuscated\</OutputPath>
+    <DefineConstants>TRACE;MAC_LICENSED</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Online Licensed|AnyCPU'">
+    <OutputPath>..\..\Deploy\bin\Desktop\OnlineLicensed\unobfuscated\</OutputPath>
+    <DefineConstants>TRACE;WEB_LICENSE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="SecureBlackbox">
+      <HintPath>..\References\Mono\SecureBlackbox.dll</HintPath>
+    </Reference>
+    <Reference Include="SecureBlackbox.SSLCommon">
+      <HintPath>..\References\Mono\SecureBlackbox.SSLCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="SecureBlackbox.SSLServer">
+      <HintPath>..\References\Mono\SecureBlackbox.SSLServer.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CodeBehindAssembly.cs" />
+    <Compile Include="Configuration\AuthenticationConfiguration.cs" />
+    <Compile Include="Configuration\CacheLocation.cs" />
+    <Compile Include="Configuration\CachingConfig.cs" />
+    <Compile Include="Configuration\CachingProfile.cs" />
+    <Compile Include="Configuration\CookiesConfiguration.cs" />
+    <Compile Include="Configuration\HandlerBase.cs" />
+    <Compile Include="Configuration\HttpHandlersConfig.cs" />
+    <Compile Include="Configuration\HttpRuntimeConfig.cs" />
+    <Compile Include="Configuration\Role.cs" />
+    <Compile Include="Configuration\RoleCollection.cs" />
+    <Compile Include="Configuration\ServerConfig.cs" />
+    <Compile Include="Configuration\ServerConfigurationHandler.cs" />
+    <Compile Include="Configuration\SessionConfiguration.cs" />
+    <Compile Include="Configuration\User.cs" />
+    <Compile Include="Configuration\UserCollection.cs" />
+    <Compile Include="Configuration\VirtualDirectoryConfig.cs" />
+    <Compile Include="Configuration\VirtualPathProviders.cs" />
+    <Compile Include="Core\ExtensionAttribute.cs" />
+    <Compile Include="Core\Extensions.cs" />
+    <Compile Include="DefaultHttpHandler.cs" />
+    <Compile Include="Delegates.cs" />
+    <Compile Include="Exceptions\ConfigurationErrorsException.cs" />
+    <Compile Include="Exceptions\HttpRequestValidationException.cs" />
+    <Compile Include="Exceptions\HttpUnhandledException.cs" />
+    <Compile Include="Helpers\CaseInsensitiveDictionary.cs" />
+    <Compile Include="Helpers\CrossSiteScriptingValidation.cs" />
+    <Compile Include="Helpers\Device.cs" />
+    <Compile Include="Helpers\StringHelpers.cs" />
+    <Compile Include="Helpers\UrlPath.cs" />
+    <Compile Include="Hosting\AsyncWorkerRequest.cs" />
+    <Compile Include="Hosting\DefaultWorkerRequest.cs" />
+    <Compile Include="Hosting\HostingEnvironment.cs" />
+    <Compile Include="Hosting\VirtualDirectory.cs" />
+    <Compile Include="Hosting\VirtualFile.cs" />
+    <Compile Include="Hosting\VirtualFileBase.cs" />
+    <Compile Include="Hosting\VirtualPathProvider.cs" />
+    <Compile Include="HttpApplicationFactory.cs" />
+    <Compile Include="HttpBrowserCapabilities.cs" />
+    <Compile Include="HttpCacheability.cs" />
+    <Compile Include="HttpCachePolicy.cs" />
+    <Compile Include="HttpCachePolicyBase.cs" />
+    <Compile Include="HttpCapabilitiesBase.cs" />
+    <Compile Include="HttpContext.cs" />
+    <Compile Include="HttpContextBase.cs" />
+    <Compile Include="HttpContextWrapper.cs" />
+    <Compile Include="HttpCookie.cs" />
+    <Compile Include="HttpCookieCollection.cs" />
+    <Compile Include="HttpCookieMode.cs" />
+    <Compile Include="HttpErrorCode.cs" />
+    <Compile Include="HttpException.cs" />
+    <Compile Include="HttpFileCollection.cs" />
+    <Compile Include="HttpInputStream.cs" />
+    <Compile Include="HttpMethod.cs" />
+    <Compile Include="HttpPostedFile.cs" />
+    <Compile Include="HttpRawRequestContent.cs" />
+    <Compile Include="HttpRequest.cs" />
+    <Compile Include="HttpRequestBase.cs" />
+    <Compile Include="HttpRequestWrapper.cs" />
+    <Compile Include="HttpResponse.cs" />
+    <Compile Include="HttpResponseBase.cs" />
+    <Compile Include="HttpResponseWrapper.cs" />
+    <Compile Include="HttpRuntime.cs" />
+    <Compile Include="HttpUtility.cs" />
+    <Compile Include="HttpValidationStatus.cs" />
+    <Compile Include="HttpValueCollection.cs" />
+    <Compile Include="HttpWorkerRequest.cs" />
+    <Compile Include="IHttpHandler.cs" />
+    <Compile Include="IHttpModule.cs" />
+    <Compile Include="Licensing\LicenseProvider.cs" />
+    <Compile Include="Logging\DefaultLogProvider.cs" />
+    <Compile Include="Logging\ILogProvider.cs" />
+    <Compile Include="Logging\LogDataItem.cs" />
+    <Compile Include="MimeMapping.cs" />
+    <Compile Include="MultipartContentItem.cs" />
+    <Compile Include="MultipartFormParser.cs" />
+    <None Include="Networking\INetworkInterface.cs" />
+    <None Include="Networking\IP_ADAPTER_INFO.cs" />
+    <None Include="Networking\NativeMethods.cs" />
+    <None Include="Networking\NetworkInterface.cs" />
+    <None Include="Networking\NetworkInterface_static.cs" />
+    <None Include="Networking\PhysicalAddress.cs" />
+    <Compile Include="PageHandler.cs" />
+    <Compile Include="Parsers\AspxParser.cs" />
+    <Compile Include="Parsers\JSON.cs" />
+    <Compile Include="Parsers\PageParser.cs" />
+    <None Include="Properties\Changelog.txt" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\PadarnVersionInfo.cs" />
+    <Compile Include="Routing\IRouteHandler.cs" />
+    <Compile Include="Routing\RequestContext.cs" />
+    <Compile Include="Routing\Route.cs" />
+    <Compile Include="Routing\RouteBase.cs" />
+    <Compile Include="Routing\RouteCollection.cs" />
+    <Compile Include="Routing\RouteData.cs" />
+    <Compile Include="Routing\RouteTable.cs" />
+    <Compile Include="Routing\RouteValueDictionary.cs" />
+    <Compile Include="Routing\VirtualPathData.cs" />
+    <Compile Include="Security\Authentication.cs" />
+    <Compile Include="Security\BasicAuthentication.cs" />
+    <Compile Include="Security\Cryptography\BasicAuthInfo.cs" />
+    <Compile Include="Security\Cryptography\DigestAuthInfo.cs" />
+    <Compile Include="Security\Cryptography\IAuthenticationCallbackInfo.cs" />
+    <Compile Include="Security\DigestAuthentication.cs" />
+    <Compile Include="Security\FormsAuthentication.cs" />
+    <Compile Include="Security\GenericIdentity.cs" />
+    <Compile Include="Security\GenericPrincipal.cs" />
+    <Compile Include="Security\IIdentity.cs" />
+    <Compile Include="Security\IPrincipal.cs" />
+    <Compile Include="Server\HttpRequestListener.cs" />
+    <Compile Include="Server\HttpSocket.cs" />
+    <Compile Include="Server\NetworkStreamWrapperBase.cs" />
+    <Compile Include="Server\RequestEventArgs.cs" />
+    <Compile Include="Server\SocketWrapperBase.cs" />
+    <Compile Include="Server\Ssl\HttpsSocket.cs" />
+    <Compile Include="Server\Ssl\SslNetworkStream.cs" />
+    <Compile Include="Server\StandardNetworkStream.cs" />
+    <Compile Include="Server\WebServer.cs" />
+    <Compile Include="SessionState\HttpSessionState.cs" />
+    <Compile Include="SessionState\ISessionIDManager.cs" />
+    <Compile Include="SessionState\ISessionStateItemCollection.cs" />
+    <Compile Include="SessionState\SessionIDManager.cs" />
+    <Compile Include="SessionState\SessionManager.cs" />
+    <Compile Include="SessionState\SessionStateItemCollection.cs" />
+    <Compile Include="SessionState\SessionStateMode.cs" />
+    <Compile Include="StaticFileHandler.cs" />
+    <Compile Include="UI\BaseParser.cs" />
+    <Compile Include="UI\Control.cs" />
+    <Compile Include="UI\ControlBuilders\BasicControlBuilder.cs" />
+    <Compile Include="UI\ControlBuilders\ButtonControlBuilder.cs" />
+    <Compile Include="UI\ControlBuilders\ControlBuilder.cs" />
+    <Compile Include="UI\ControlCollection.cs" />
+    <Compile Include="UI\DefaultPageParserFilter.cs" />
+    <Compile Include="UI\HtmlTextWriter.cs" />
+    <Compile Include="UI\HtmlTextWriterAttribute.cs" />
+    <Compile Include="UI\HtmlTextWriterTag.cs" />
+    <Compile Include="UI\IPostBackEventHandler.cs" />
+    <Compile Include="UI\ITextControl.cs" />
+    <Compile Include="UI\Page.cs" />
+    <Compile Include="UI\PageParserFilter.cs" />
+    <Compile Include="UI\TemplateControl.cs" />
+    <Compile Include="UI\TemplateParser.cs" />
+    <Compile Include="UI\UserControl.cs" />
+    <Compile Include="UI\WebControls\Button.cs" />
+    <Compile Include="UI\WebControls\Label.cs" />
+    <Compile Include="UI\WebControls\LinkButton.cs" />
+    <Compile Include="UI\WebControls\TextBox.cs" />
+    <Compile Include="UI\WebControls\TextBoxMode.cs" />
+    <Compile Include="UI\WebControls\WebControl.cs" />
+    <Compile Include="VirtualDirectories\VirtualDirectories.cs" />
+    <Compile Include="VirtualDirectories\VirtualDirectory.cs" />
+    <Compile Include="VirtualPath.cs" />
+    <Compile Include="VirtualPathUtility.cs" />
+    <Compile Include="HttpStatusCode.cs" />
+    <Compile Include="Resources.Designer.cs" />
+    <Compile Include="Server\Ssl\ElServerSSLSocket.cs" />
+    <Compile Include="Server\Ssl\ElSSLSocket.cs" />
+    <Compile Include="Server\Ssl\SslAsyncResult.cs" />
+    <Compile Include="Server\Ssl\SslStream.cs" />
+    <Compile Include="Configuration\SecurityConfig.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx" />
+  </ItemGroup>
+</Project>
