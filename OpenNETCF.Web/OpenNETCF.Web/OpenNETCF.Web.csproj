@@ -26,10 +26,14 @@
     <NativePlatformName>Windows CE</NativePlatformName>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -121,15 +125,15 @@
     <Reference Include="mscorlib" />
     <Reference Include="SecureBlackbox, Version=14.0.287.0, Culture=neutral, PublicKeyToken=374a3a73ff9ebc6a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\EldoS\SecureBlackbox.NET\Assemblies\NET_CF20\SecureBlackbox.dll</HintPath>
+      <HintPath>References\CF\SecureBlackbox.dll</HintPath>
     </Reference>
     <Reference Include="SecureBlackbox.SSLCommon, Version=14.0.287.0, Culture=neutral, PublicKeyToken=374a3a73ff9ebc6a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\EldoS\SecureBlackbox.NET\Assemblies\NET_CF20\SecureBlackbox.SSLCommon.dll</HintPath>
+      <HintPath>References\CF\SecureBlackbox.SSLCommon.dll</HintPath>
     </Reference>
     <Reference Include="SecureBlackbox.SSLServer, Version=14.0.287.0, Culture=neutral, PublicKeyToken=374a3a73ff9ebc6a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\EldoS\SecureBlackbox.NET\Assemblies\NET_CF20\SecureBlackbox.SSLServer.dll</HintPath>
+      <HintPath>References\CF\SecureBlackbox.SSLServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -194,7 +198,6 @@
     <Compile Include="HttpResponseWrapper.cs" />
     <Compile Include="HttpValidationStatus.cs" />
     <Compile Include="IHttpModule.cs" />
-    <Compile Include="Licensing\LicenseProvider.cs" />
     <Compile Include="Logging\DefaultLogProvider.cs" />
     <Compile Include="Logging\ILogProvider.cs" />
     <Compile Include="Logging\LogDataItem.cs" />
@@ -239,7 +242,6 @@
     <Compile Include="OpenNETCF.Configuration\SingleTagSectionHandler.cs" />
     <Compile Include="Parsers\AspxParser.cs" />
     <Compile Include="Parsers\JSON.cs" />
-    <Compile Include="Properties\PadarnVersionInfo.cs" />
     <Compile Include="Routing\IRouteHandler.cs" />
     <Compile Include="Routing\RequestContext.cs" />
     <Compile Include="Routing\Route.cs" />

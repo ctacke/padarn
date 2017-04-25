@@ -16,10 +16,14 @@
     <DeployDirSuffix>\Hard Disk\mtc</DeployDirSuffix>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <NativePlatformName>Windows CE</NativePlatformName>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
     <FormFactorID>
     </FormFactorID>
     <DeployDirPrefix>\</DeployDirPrefix>
@@ -51,6 +55,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
+    <Reference Include="OpenNETCF.Extensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>References\CF\OpenNETCF.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -65,11 +73,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\OpenNETCF.Extensions\OpenNETCF.Extensions\OpenNETCF.Extensions.CF.csproj">
-      <Project>{8C471165-A242-437D-B117-02663D1E064B}</Project>
-      <Name>OpenNETCF.Extensions.CF</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Padarn\OpenNETCF.Web\OpenNETCF.Web\OpenNETCF.Web.csproj">
+    <ProjectReference Include="..\OpenNETCF.Web\OpenNETCF.Web\OpenNETCF.Web.csproj">
       <Project>{662C4633-A8FC-4D9A-85ED-8FDB9622229E}</Project>
       <Name>OpenNETCF.Web</Name>
     </ProjectReference>
