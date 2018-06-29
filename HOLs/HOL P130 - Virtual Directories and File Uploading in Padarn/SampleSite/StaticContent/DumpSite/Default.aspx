@@ -1,0 +1,1 @@
+﻿<%@ Page CodeBehind="SampleSite.DumpSite.dll" Inherits="SampleSite.Default" %>

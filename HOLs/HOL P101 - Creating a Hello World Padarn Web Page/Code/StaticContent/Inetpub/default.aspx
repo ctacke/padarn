@@ -1,0 +1,1 @@
+﻿<%@ Page CodeBehind="MyPageLibrary.dll" Inherits="MyPageLibrary.Default" %>
