@@ -93,3 +93,8 @@
 - Added Security configurations, allowing enable/disable of TLS 1.0, 1.1 and 1.2
 - Added Securing configuration to allow enabling specific cipher suites
 - SSL-related bugfixes
+
++=============+
+| 1.6.16137.0 |
++=============+
+- Speed up SSL handshake(Windows CE) by using Certificate from Windows Store as it uses a different Cypto Provider(SecureBlackbox 16)
