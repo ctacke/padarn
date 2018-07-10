@@ -217,18 +217,17 @@ namespace SecureBlackbox.SSLSocket.Server
 			}
 		}
 
-		public SBCustomCertStorage.TElMemoryCertStorage CertStorage
-		{ 
-			get
-			{
-				return (SBCustomCertStorage.TElMemoryCertStorage) SBSSLServer.CertStorage;
-			}
-			set
-			{
-				if (value is SBCustomCertStorage.TElMemoryCertStorage)
-					SBSSLServer.CertStorage = value;
-			}
-		}
+        public SBCustomCertStorage.TElCustomCertStorage CustomCertStorage
+        {
+            get
+            {
+                return SBSSLServer.CertStorage;
+            }
+            set
+            {
+                SBSSLServer.CertStorage = value;
+            }
+        }
 
 		public SBCustomCertStorage.TElCustomCertStorage ClientCertStorage 
 		{ 

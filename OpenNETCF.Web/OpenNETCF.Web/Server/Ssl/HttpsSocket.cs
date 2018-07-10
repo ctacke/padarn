@@ -40,7 +40,11 @@ namespace OpenNETCF.Web.Server
         private ElServerSSLSocket m_clientSocket;
         private ILogProvider m_logProvider;
         private static SBSessionPool.TElSessionPool m_sessionPool;
+#if WindowsCE
+        private static SBWinCertStorage.TElWinCertStorage m_certStorage = new SBWinCertStorage.TElWinCertStorage();
+#else
         private static TElMemoryCertStorage m_certStorage = new TElMemoryCertStorage();
+#endif
         private object m_syncRoot = new object();
         private const string SSL_EVAL_LICENSE_KEY = "45AFCF5995D8921D98A50E0C2EBB83E65E2EC1CCFDCD0222B07F4D6CFD8C7D4F4088B4137D74C89C873D2AC07F567311DBF2568E84C2CCD1DB9D84E0C7B2F37FA5D9FB68A37446F71E4C1EBBD3B82D41F1CA8952872AF57128CD7199B9931ED8294CCC9EFEDBA255F0B2902F934E036475148C72B73996057F55DB8E0DF8540DF553DF9F33FF1A666FDB5AA9BACAE288DB06DD41C917679265387F32F6AD7532F80EE36C636D4D633C45B1CD890ED8DD4337E6567D9E91DD3AEE53672D17D08CD3A0D2D66385443A7A3A5F1928ED62796FBCE9C0F4B288687B269E3E27E2F9B4399E2C2E0825B919F56FAB3C1FD247A723D368723F00749932BB0F1C74BFB7A1";
         private static short m_protocols = 0;
@@ -70,7 +74,17 @@ namespace OpenNETCF.Web.Server
                 m_sessionPool = new SBSessionPool.TElSessionPool();
             }
 
+#if WindowsCE
+            TElX509Certificate cert = LoadCertificate(m_config.CertificateName, m_config.CertificatePassword);
+            m_certStorage.Add(cert, "Root", true, false, false);
+
+            TElX509Certificate a = m_certStorage.GetCertificates(0);
+            int b = m_certStorage.Count;
+
+            m_certStorage.SystemStores.Add("Root");
+#else
             m_certStorage.Add(LoadCertificate(m_config.CertificateName, m_config.CertificatePassword), true);
+#endif
         }
 
         public HttpsSocket(ILogProvider logProvider)
@@ -132,7 +146,7 @@ namespace OpenNETCF.Web.Server
                     m_socket.set_CipherSuites(SBSSLConstants.__Global.SB_SUITE_RSA_AES256_SHA, true);
                 }
 
-                m_socket.CertStorage = m_certStorage;
+                m_socket.CustomCertStorage = m_certStorage;
                 m_socket.OnError += new SBSSLCommon.TSBErrorEvent(m_socket_OnError);
             }
         }
