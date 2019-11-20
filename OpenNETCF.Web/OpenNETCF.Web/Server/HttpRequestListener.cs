@@ -69,6 +69,7 @@ namespace OpenNETCF.Web.Server
 
             IPEndPoint localEndpoint = new IPEndPoint(localIP, m_port);
 
+#if !CORE
             if (ServerConfig.GetConfig().UseSsl == true)
             {
                 m_logProvider.LogRuntimeInfo(ZoneFlags.RequestListener | ZoneFlags.Startup, "SSL Enabled");
@@ -79,6 +80,10 @@ namespace OpenNETCF.Web.Server
                 m_logProvider.LogRuntimeInfo(ZoneFlags.RequestListener | ZoneFlags.Startup, "SSL Disabled");
                 m_serverSocket = new HttpSocket();
             }
+#else
+            m_logProvider.LogRuntimeInfo(ZoneFlags.RequestListener | ZoneFlags.Startup, "SSL Disabled");
+            m_serverSocket = new HttpSocket();
+#endif
             m_serverSocket.Create(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             
             try

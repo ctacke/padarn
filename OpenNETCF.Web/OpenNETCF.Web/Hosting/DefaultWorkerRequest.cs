@@ -79,7 +79,11 @@ namespace OpenNETCF.Web.Hosting
         /// <returns>true if the connection is an SSL connection; otherwise, false.</returns>
         public override bool IsSecure()
         {
+#if !CORE
             return m_client is OpenNETCF.Web.Server.HttpsSocket;
+#else
+            return false;
+#endif
         }
 
         /// <summary>

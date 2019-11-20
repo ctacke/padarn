@@ -43,7 +43,7 @@ namespace SecureBlackbox.SSLSocket.Server
     /// </summary>
 #if (!WindowsCE)
     [ToolboxItem(true)]
-#if (!MONO)
+#if (!MONO && !CORE)
     [System.Drawing.ToolboxBitmap(typeof(ElServerSSLSocket), "SecureBlackbox.SSLSocket.Server.ElServerSSLSocket.bmp")]
 #endif
 #endif

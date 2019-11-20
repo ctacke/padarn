@@ -84,7 +84,11 @@ namespace OpenNETCF.Web.Hosting
         /// <returns>true if the connection is an SSL connection; otherwise, false.</returns>
         public override bool IsSecure()
         {
+#if CORE
+            return false;
+#else
             return m_client is OpenNETCF.Web.Server.HttpsSocket;
+#endif
         }
 
         /// <summary>
@@ -201,7 +205,7 @@ namespace OpenNETCF.Web.Hosting
             }
         }
 
-        #region Overriden Members
+#region Overriden Members
 
         /// <summary>
         /// 
@@ -536,9 +540,9 @@ namespace OpenNETCF.Web.Hosting
             return m_client.Connected;
         }
 
-        #endregion
+#endregion
 
-        #region Private Methods
+#region Private Methods
 
         /// <summary>
         /// initializes the resposen.  Called from ctor and before closing the connection to see if keep alive is available
@@ -1742,6 +1746,6 @@ namespace OpenNETCF.Web.Hosting
         }
 
 
-        #endregion // Private Methods
+#endregion // Private Methods
     }
 }
