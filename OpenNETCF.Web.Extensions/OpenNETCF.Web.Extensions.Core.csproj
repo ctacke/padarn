@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
@@ -23,7 +23,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Extensions\OpenNETCF.Extensions.Core.csproj" />
+    <PackageReference Include="opennetcf-extensions-standard" Version="1.0.19330" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\OpenNETCF.Web\OpenNETCF.Web\OpenNETCF.Web.Core.csproj" />
   </ItemGroup>
 
