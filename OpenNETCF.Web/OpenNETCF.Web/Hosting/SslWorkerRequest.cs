@@ -1,49 +1,28 @@
-#region License
-// Copyright ©2017 Tacke Consulting (dba OpenNETCF)
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
-// and associated documentation files (the "Software"), to deal in the Software without restriction,
-// including without limitation the rights to use, copy, modify, merge, publish, distribute, 
-// sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is 
-// furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be included in all copies or 
-// substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
-// INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR 
-// PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR 
-// ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
-// ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-//
-#endregion
 //                                                                   
 // Copyright (c) 2007-2008 OpenNETCF Consulting, LLC                        
 //    
 
 using OpenNETCF.Web.Helpers;
 using OpenNETCF.Web.Security;
-using System.Runtime.InteropServices;
 using System.Linq;
 
 namespace OpenNETCF.Web.Hosting
 {
+    using Configuration;
+    using OpenNETCF.Web.Logging;
+    using OpenNETCF.WindowsCE;
     using System;
     using System.Collections.Generic;
     using System.Collections.Specialized;
+    using System.Diagnostics;
     using System.Globalization;
     using System.IO;
+    using System.Net.Security;
     using System.Net.Sockets;
-    using System.Text;
-    using System.Threading;
-    using Configuration;
-    using OpenNETCF.WindowsCE;
-    using OpenNETCF.Web.Logging;
-    using System.Net;
-    using System.Diagnostics;
     using System.Reflection;
+    using System.Text;
     using System.Text.RegularExpressions;
-using System.Net.Security;
+    using System.Threading;
 
     /// <summary>
     /// Default handler for ASP.NET page requests for the Web Server
@@ -54,7 +33,7 @@ using System.Net.Security;
         private const string TRACE = "TRACE";
 #endif
 
-        private bool  EnableTracing { get; set; }
+        private bool EnableTracing { get; set; }
 
         #region Fields
 
@@ -68,7 +47,6 @@ using System.Net.Security;
         private bool m_partialDownload = true;
         private ILogProvider m_logProvider;
         private bool m_headersCleared = false;
-        private Stream m_stream;
 
         private static Dictionary<Type, IHttpHandler> m_httpHandlerCache = new Dictionary<Type, IHttpHandler>();
 
@@ -136,7 +114,7 @@ using System.Net.Security;
                     if (m_client.Connected)
                     {
                         m_httpRawRequestContent = GetPartialRawRequestContent(m_client);
-                        if (m_client.Connected && m_httpRawRequestContent.Length == 0  && m_client.Available > 0 )
+                        if (m_client.Connected && m_httpRawRequestContent.Length == 0 && m_client.Available > 0)
                         {
                             //try again since we should not have a 0 length on the request
                             int retries = 5;
@@ -168,9 +146,9 @@ using System.Net.Security;
 
 
                 //if the raw content is null or we have no data just close the connection
-                if (m_httpRawRequestContent == null 
+                if (m_httpRawRequestContent == null
                     || m_httpRawRequestContent.Length == 0
-                    || m_httpRawRequestContent.Path == null )
+                    || m_httpRawRequestContent.Path == null)
                 {
                     CloseConnection();
                 }
@@ -348,7 +326,7 @@ using System.Net.Security;
 
                 HttpContext.Current.Response.HeadersWritten = m_headersSent = true;
             }
-            
+
             if (Path.EndsWith(".aspx"))
             {
                 // TranslateResponseASP();
@@ -558,7 +536,7 @@ using System.Net.Security;
         /// </summary>
         private void SetDefaultServerHeaderAndStatus()
         {
-            if(m_versionString == null)
+            if (m_versionString == null)
             {
                 m_versionString = Assembly.GetExecutingAssembly().GetName().Version.ToString(3);
             }
@@ -641,11 +619,11 @@ using System.Net.Security;
                             {
                                 t = c.GetType(h.TypeName);
 
-                    if (t == null)
-                    {
-                        throw new HttpException(HttpErrorCode.InternalServerError,
-                            string.Format("Unable To load type '{0}'", h.TypeName));
-                    }
+                                if (t == null)
+                                {
+                                    throw new HttpException(HttpErrorCode.InternalServerError,
+                                        string.Format("Unable To load type '{0}'", h.TypeName));
+                                }
                             }
 
                             m_handlerTypeCache.Add(h.TypeName, t);
@@ -751,8 +729,8 @@ using System.Net.Security;
                     HttpCachePolicy policy = new HttpCachePolicy();
 
                     policy.SetMaxAge(profile.Duration);
-                    
-                    switch(profile.Location)
+
+                    switch (profile.Location)
                     {
                         case CacheLocation.Client:
                             policy.SetCacheability(HttpCacheability.Private);
@@ -834,7 +812,7 @@ using System.Net.Security;
                             if (FormsAuthentication.SlidingExpiration)
                             {
                                 FormsAuthentication.SetAuthCookie(authCookie["UID"], false);
-//                                HttpContext.Current.Response.Cookies[FormsAuthentication.FormsCookieName]
+                                //                                HttpContext.Current.Response.Cookies[FormsAuthentication.FormsCookieName]
                                 authCookie.Expires = DateTime.Now.AddMinutes(30);
                             }
                         }
@@ -1025,7 +1003,7 @@ using System.Net.Security;
                     }
 
                     // create the session now (we needed the headers for the cookies)
-//                    HttpContext.Current.InitializeSession();
+                    //                    HttpContext.Current.InitializeSession();
 
                     if (AuthenticationEnabled || RequestRequiresAuthentication())
                     {
@@ -1246,7 +1224,7 @@ using System.Net.Security;
         private string GetCustomErrorPage(HttpErrorCode errorCode)
         {
             string[] extensions = new string[] { "htm", "html", "aspx" };
-             
+
             var folder = ServerConfig.GetConfig().CustomErrorFolder;
             if (folder == null) return null;
             if (!Directory.Exists(folder)) return null;
@@ -1441,7 +1419,7 @@ using System.Net.Security;
                 foreach (string document in conf.DefaultDocuments)
                 {
                     string localFile = GetCasedFileNameFromCaselessName(System.IO.Path.Combine(physicalPath, document));
-                    if(localFile != null)
+                    if (localFile != null)
                     {
                         defaultDocument = document;
                         break;
@@ -1631,7 +1609,7 @@ using System.Net.Security;
             byte[] buffer = new byte[10240];
 
             received = m_output.Read(buffer, 0, buffer.Length);
-            
+
             if (received > 0)
             {
                 rawContent.AddBytes(buffer, 0, received);

@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <Version>2.0.20137</Version>
+    <Authors>Chris Tacke, Neil Cowburn</Authors>
+    <Company>Tacke Consulting</Company>
+    <Product>Padarn Web Server</Product>
+    <Copyright>©2007-2020 Tacke Consulting</Copyright>
+    <PackageProjectUrl>https://github.com/ctacke/padarn</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ctacke/padarn</RepositoryUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\bin\Core\Release\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\bin\Core\Debug\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="References\**" />
+    <EmbeddedResource Remove="References\**" />
+    <None Remove="References\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="packages.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="opennetcf-extensions-standard" Version="1.0.19330" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OpenNETCF.Web\OpenNETCF.Web\OpenNETCF.Web.csproj" />
+  </ItemGroup>
+
+</Project>
